@@ -3,7 +3,7 @@
 state=1;
 
 while true; do
-    if [ `host google.com 2>&1 | wc -l` -gt 1 ]; then
+    if [ `ping -c4 -t4 74.125.226.232 | grep "0 packets received" | wc -l` -lt 1 ]; then
         echo -n "good: "
         date
         if [ $state -lt 1 ]; then
