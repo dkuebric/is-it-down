@@ -9,7 +9,7 @@ while true; do
         if [ $state -lt 1 ]; then
             echo "state change +"
             state=1;
-            open good.mp3
+            afplay good.mp3
         fi
     else
         echo -n "bad: "
@@ -17,7 +17,7 @@ while true; do
         if [ $state -gt 0 ]; then
             echo "state change -"
             state=0;
-            open bad.mp3
+            afplay bad.mp3
         fi
     fi
 done
